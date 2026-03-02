@@ -1,0 +1,46 @@
+public class BannerApp {
+    private static final int BANNER_HEIGHT = 7;
+    private static String[] bannerLines;
+    
+    public static void initializeBanner(String displayText) {
+        // Combined array declaration and initialization
+        bannerLines = new String[] {
+            String.join("", "██████╗ ", "██████╗ ", "██████╗ "),
+            String.join("", "██╔══██╗", "██╔══██╗", "██╔══██╗"),
+            String.join("", "██████╔╝", "██████╔╝", "██████╔╝"),
+            String.join("", "██╔═══╝ ", "██╔═══╝ ", "██╔═══╝ "),
+            String.join("", "██║     ", "██║     ", "██║     "),
+            String.join("", "╚═╝     ", "╚═╝     ", "╚═╝     "),
+            String.join("", "        ", "        ", displayText)
+        };
+    }
+    
+    public static void displayBanner() {
+        for (String line : bannerLines) {
+            System.out.println(line);
+        }
+    }
+    
+    public static void main(String[] args) {
+        // Initialize banner with custom text
+        initializeBanner("OPS");
+        
+        // Display header
+        System.out.println("OPS Banner Application - UC5");
+        System.out.println("============================\n");
+        
+        // Display banner
+        displayBanner();
+        
+        // Demonstrate reusability with different text
+        System.out.println("\nBanner with different text:");
+        System.out.println("--------------------------");
+        initializeBanner("DEV");
+        displayBanner();
+        
+        System.out.println("\nBanner with longer text:");
+        System.out.println("------------------------");
+        initializeBanner("UC5");
+        displayBanner();
+    }
+}
